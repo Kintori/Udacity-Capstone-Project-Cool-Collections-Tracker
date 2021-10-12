@@ -1,0 +1,571 @@
+{
+	"info": {
+		"_postman_id": "ad2956d1-4f2c-4a64-aebc-0a0ee210fcf6",
+		"name": "Udacity Capstone Project - Cool Collections Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Collections",
+			"item": [
+				{
+					"name": "Get all collections",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/collections/",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"collections",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one collection",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/collections/:collectionId",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"collections",
+								":collectionId"
+							],
+							"variable": [
+								{
+									"key": "collectionId",
+									"value": "d13da81d-9314-4444-9a06-52003bf1c27e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create collection",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"My Pokemon TCG\",\n\t\"description\": \"Pokemon cards rule!\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/collections",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"collections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update collection",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Bucket list\",\n\t\"description\": \"A list of buckets\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/collections/:collectionId",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"collections",
+								":collectionId"
+							],
+							"variable": [
+								{
+									"key": "collectionId",
+									"value": "cdb3ec34-177c-46d0-9aa4-982222fccbd7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete collection",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/collections/:collectionId",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"collections",
+								":collectionId"
+							],
+							"variable": [
+								{
+									"key": "collectionId",
+									"value": "6a4d4a65-346f-48b1-b3a1-92dc354b71eb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create collected item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Growlithe\",\n\t\"description\": \"One pokemon to rule them all\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/collecteditems/:collectionId",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"collecteditems",
+								":collectionId"
+							],
+							"variable": [
+								{
+									"key": "collectionId",
+									"value": "6a4d4a65-346f-48b1-b3a1-92dc354b71eb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update collected item",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Bucket list\",\n\t\"description\": \"A list of buckets\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/collecteditems/:itemId",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"collecteditems",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "itemId",
+									"value": "0b0417b0-0869-448f-8a5c-a7556684788a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all collected items for one collection",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/collecteditems/:collectionId",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"collecteditems",
+								":collectionId"
+							],
+							"variable": [
+								{
+									"key": "collectionId",
+									"value": "6a4d4a65-346f-48b1-b3a1-92dc354b71eb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one collected item",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/collecteditem/:itemId",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"collecteditem",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "itemId",
+									"value": "08070999-231a-4273-a948-1f4922775e67"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete collected item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/collecteditems/:itemId",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"collecteditems",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "itemId",
+									"value": "d69e2903-a44e-4ff0-9afc-43ed3bcaf7b6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get attachment URL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/Kintori/Pictures/1200px-African_wild_dog_(Lycaon_pictus_pictus).jpg"
+							}
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/attachment/collecteditems/:itemId",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"attachment",
+								"collecteditems",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "itemId",
+									"value": "08070999-231a-4273-a948-1f4922775e67"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put to attachment url",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/Kintori/Pictures/1200px-African_wild_dog_(Lycaon_pictus_pictus).jpg"
+							}
+						},
+						"url": {
+							"raw": "https://cool-collections-tracker-images-proft-dev.s3.amazonaws.com/08070999-231a-4273-a948-1f4922775e67?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAURIDA3ENQ3FSJQUP%2F20211012%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211012T072027Z&X-Amz-Expires=300&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCI%2F3pXuiGXkKoX8fvDamlnYHVGy6tC%2BqM0BjMU4%2FzX9QIgfGIWhBYbU%2Bf%2BKAnVlx0EQVHK2t0PGHo3WeAD2c0Y5RAqswIIEBABGgwzMTE5MjgzNDY5MDciDFD8Mgh%2BPLM%2BwO72ciqQAku%2FZ57T4bCWv4%2BN46ggWgx%2FPNJtbOXg2JHwxsg8jOzUA6%2FRomI66vxS8nnmCx7zrV%2BdpgQu2%2B0SwAunU4Cv1kwJQhN%2FKbJUdh8G3Qnk6dS7DEyMZaLhc7hIcr8%2FBu3SiFOxx7uLvZgHtckOcTabshG7E0lc2i6KBIdS%2F3BPy4iKX2Rxy3IpFONxTqkFcHe9xfyl7PH9AwlpCPCnuy3%2BBHBr9lGhSHQ6L5CPw0jQAe%2B5244pdK30kgQ2HUxhFDFSHPAO1LKKSQQim4kgTTIjPR35wk2ldm0ldn9FjiFPpBh4%2BVnTg0zTsnyEExjBJUSIQM47nc8FrZFW5EuXlH7SQNwxghkB6diNTOqM%2Bkcjqr0zMLnulIsGOpoBIM7SRqbjtlklVR%2BGcLfP6rev5CV2gRniPz2bIzuK9KGfZMzKKbDbpT4X5wzN4NRCOGxtCOvuin%2B1mGP%2BV59%2B2Y%2BoMQjLgqg8e0h7v71Endv7LuV8si4AZfvqGDsgoqP126K%2F5%2Fcra415UIh%2FGh4EwF7z3uK65d5n%2BeDujvzg%2BCXf3p0d5biG30PfDKSt6HSVvGJOSzWnpU69tg%3D%3D&X-Amz-Signature=939e206aabe5c11d8d0af2e3925b50c4854afa91522c3e97099730c941e3f69d&X-Amz-SignedHeaders=host",
+							"protocol": "https",
+							"host": [
+								"cool-collections-tracker-images-proft-dev",
+								"s3",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"08070999-231a-4273-a948-1f4922775e67"
+							],
+							"query": [
+								{
+									"key": "X-Amz-Algorithm",
+									"value": "AWS4-HMAC-SHA256"
+								},
+								{
+									"key": "X-Amz-Credential",
+									"value": "ASIAURIDA3ENQ3FSJQUP%2F20211012%2Fus-east-1%2Fs3%2Faws4_request"
+								},
+								{
+									"key": "X-Amz-Date",
+									"value": "20211012T072027Z"
+								},
+								{
+									"key": "X-Amz-Expires",
+									"value": "300"
+								},
+								{
+									"key": "X-Amz-Security-Token",
+									"value": "IQoJb3JpZ2luX2VjEIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCI%2F3pXuiGXkKoX8fvDamlnYHVGy6tC%2BqM0BjMU4%2FzX9QIgfGIWhBYbU%2Bf%2BKAnVlx0EQVHK2t0PGHo3WeAD2c0Y5RAqswIIEBABGgwzMTE5MjgzNDY5MDciDFD8Mgh%2BPLM%2BwO72ciqQAku%2FZ57T4bCWv4%2BN46ggWgx%2FPNJtbOXg2JHwxsg8jOzUA6%2FRomI66vxS8nnmCx7zrV%2BdpgQu2%2B0SwAunU4Cv1kwJQhN%2FKbJUdh8G3Qnk6dS7DEyMZaLhc7hIcr8%2FBu3SiFOxx7uLvZgHtckOcTabshG7E0lc2i6KBIdS%2F3BPy4iKX2Rxy3IpFONxTqkFcHe9xfyl7PH9AwlpCPCnuy3%2BBHBr9lGhSHQ6L5CPw0jQAe%2B5244pdK30kgQ2HUxhFDFSHPAO1LKKSQQim4kgTTIjPR35wk2ldm0ldn9FjiFPpBh4%2BVnTg0zTsnyEExjBJUSIQM47nc8FrZFW5EuXlH7SQNwxghkB6diNTOqM%2Bkcjqr0zMLnulIsGOpoBIM7SRqbjtlklVR%2BGcLfP6rev5CV2gRniPz2bIzuK9KGfZMzKKbDbpT4X5wzN4NRCOGxtCOvuin%2B1mGP%2BV59%2B2Y%2BoMQjLgqg8e0h7v71Endv7LuV8si4AZfvqGDsgoqP126K%2F5%2Fcra415UIh%2FGh4EwF7z3uK65d5n%2BeDujvzg%2BCXf3p0d5biG30PfDKSt6HSVvGJOSzWnpU69tg%3D%3D"
+								},
+								{
+									"key": "X-Amz-Signature",
+									"value": "939e206aabe5c11d8d0af2e3925b50c4854afa91522c3e97099730c941e3f69d"
+								},
+								{
+									"key": "X-Amz-SignedHeaders",
+									"value": "host"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiId",
+			"value": ""
+		},
+		{
+			"key": "authToken",
+			"value": ""
+		}
+	]
+}
